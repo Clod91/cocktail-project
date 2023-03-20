@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  width: 260px;
+  height: 400px;
+  border: 2px solid $primary_color;
+  background-color: black;
+}
+
+.card_image {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.card_text {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  padding: 6px;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+  transform: translateY(40px);
+  font-family: $secondary_font;
+  font-size: 1.1rem;
+}

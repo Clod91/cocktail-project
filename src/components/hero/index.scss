@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $primary_font;
+}
+.hero_title {
+  font-size: 3rem;
+}
+.hero_first_list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  padding: 0;
+  & img {
+    height: 25px;
+    width: 20px;
+  }
+  & div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+hr {
+  width: 80%;
+  border: 0;
+  border-bottom: 1px dotted $primary_color;
+  border-width: 4px;
+}
+
+.hero_second_list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  li {
+    cursor: pointer;
+    &:hover {
+      color: $primary_color;
+    }
+  }
+}
