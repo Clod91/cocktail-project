@@ -1,8 +1,15 @@
 import "./index.scss";
 
-const Card = ({ data }) => {
+const Card = ({ data, setItemInfo }) => {
+  const onCardClick = () =>
+    setItemInfo((prev) => ({
+      ...prev,
+      isVisible: true,
+      payload: data,
+    }));
+
   return (
-    <div className="card">
+    <div className="card" onClick={onCardClick}>
       <img
         className="card_image"
         src={data.strDrinkThumb}

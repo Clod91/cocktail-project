@@ -1,6 +1,7 @@
+@import "../../styles/mixins";
+
 .content {
-  display: flex;
-  justify-content: center;
+  @include flex_container;
   gap: 50px;
   flex-wrap: wrap;
 }

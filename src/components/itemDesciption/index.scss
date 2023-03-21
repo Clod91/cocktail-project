@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.item_description {
+  @include flex_container;
+  position: fixed;
+  width: 800px;
+  height: 500px;
+  background-color: $secondary_color;
+  border-radius: 20px;
+  box-shadow: 0 0 6px black;
+  top: 80px;
+  left: calc(50% - 400px);
+
+  &_text {
+    @include flex_container(column);
+    font-family: $primary_font;
+    width: 52%;
+    height: 100%;
+    padding: 0 10px;
+  }
+  &_lists {
+    width: 100%;
+    @include flex_container(row, space-around);
+    gap: 10px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    font-family: $secondary_font;
+    font-size: 1.2rem;
+  }
+  &_image {
+    @include img-size(100%, 48%);
+
+    img {
+      @include img-size(500px, 100%);
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+      object-fit: cover;
+    }
+  }
+  &_carousel button {
+    padding: 22px 0;
+    width: 50%;
+    height: 100%;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-weight: bold;
+    background-color: black;
+    color: $secondary_color;
+    transform: translateY(-63px);
+
+    &:hover {
+      background-color: $primary_color;
+      transform: scale(1.2) translateY(-57px);
+    }
+  }
+}
+
+.close_btn {
+  background-color: transparent;
+  color: $primary_color;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 0;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.3);
+    color: darkred;
+  }
+}

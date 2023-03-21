@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { GET } from "../../utils/http";
 import "./index.scss";
 
-const Content = () => {
+const Content = ({ setItemInfo }) => {
   const [cocktailList, setCocktailList] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,11 @@ const Content = () => {
   return (
     <div className="content">
       {cocktailList.map((cocktail) => (
-        <Card data={cocktail} key={cocktail.idDrink} />
+        <Card
+          data={cocktail}
+          key={cocktail.idDrink}
+          setItemInfo={setItemInfo}
+        />
       ))}
     </div>
   );
