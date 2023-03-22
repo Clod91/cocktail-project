@@ -1,12 +1,17 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Hero = () => {
   return (
-    <div className="hero">
-      <h1 className="hero_title">753 PROJECT</h1>
-      <ul className="hero_first_list">
+    <div className={styles.hero}>
+      <img
+        className={styles.image}
+        src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+        alt="image"
+      />
+      <h1 className={styles.title}>753 PROJECT</h1>
+      <ul className={styles.first_list}>
         <li>
-          <div className="classics">
+          <div>
             <p>classics</p>
             <img
               src="https://cdn-icons-png.flaticon.com/512/38/38706.png"
@@ -15,7 +20,7 @@ const Hero = () => {
           </div>
         </li>
         <li>
-          <div className="signatures">
+          <div>
             <p>signatures</p>
             <img
               src="https://cdn-icons-png.flaticon.com/512/3329/3329163.png"
@@ -24,7 +29,7 @@ const Hero = () => {
           </div>
         </li>
         <li>
-          <div className="wines">
+          <div>
             <p>wines</p>
             <img
               src="https://cdn-icons-png.flaticon.com/512/763/763113.png"
@@ -34,7 +39,7 @@ const Hero = () => {
         </li>
       </ul>
       <hr />
-      <ul className="hero_second_list">
+      <ul className={styles.second_list}>
         <li>ordinary drinks</li>
         <li>cocktails</li>
         <li>shots</li>

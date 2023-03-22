@@ -4,10 +4,15 @@
   @include flex_container(column);
   font-family: $primary_font;
 }
-.hero_title {
+
+.image {
+  @include img-size(500px, 100vw);
+  object-fit: cover;
+}
+.title {
   font-size: 3rem;
 }
-.hero_first_list {
+.first_list {
   display: flex;
   list-style: none;
   gap: 25px;
@@ -28,7 +33,7 @@ hr {
   border-width: 4px;
 }
 
-.hero_second_list {
+.second_list {
   display: flex;
   list-style: none;
   gap: 25px;

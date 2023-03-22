@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Card = ({ data, setItemInfo }) => {
   const onCardClick = () =>
@@ -9,13 +9,13 @@ const Card = ({ data, setItemInfo }) => {
     }));
 
   return (
-    <div className="card" onClick={onCardClick}>
+    <div className={styles.card} onClick={onCardClick}>
       <img
-        className="card_image"
+        className={styles.image}
         src={data.strDrinkThumb}
         alt={data.strDrink}
       />
-      <div className="card_text">
+      <div className={styles.text}>
         <h3>{data.strDrink}</h3>
         <ul>
           <li>{data.strIngredient1}</li>

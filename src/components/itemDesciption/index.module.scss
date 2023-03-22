@@ -12,14 +12,14 @@
   top: 80px;
   left: calc(50% - 400px);
 
-  &_text {
+  .text {
     @include flex_container(column);
     font-family: $primary_font;
     width: 52%;
     height: 100%;
     padding: 0 10px;
   }
-  &_lists {
+  .lists {
     width: 100%;
     @include flex_container(row, space-around);
     gap: 10px;
@@ -30,7 +30,7 @@
     font-family: $secondary_font;
     font-size: 1.2rem;
   }
-  &_image {
+  .image {
     @include img-size(100%, 48%);
 
     img {
@@ -40,7 +40,7 @@
       object-fit: cover;
     }
   }
-  &_carousel button {
+  .carousel button {
     padding: 22px 0;
     width: 50%;
     height: 100%;

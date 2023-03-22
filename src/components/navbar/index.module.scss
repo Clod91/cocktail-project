@@ -4,10 +4,10 @@
   display: flex;
   height: 60px;
   font-family: $primary_font;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.navbar_links {
+.links {
   list-style: none;
   display: flex;
   cursor: pointer;
@@ -18,7 +18,7 @@
   }
 }
 
-.navbar_socials {
+.socials {
   list-style: none;
   display: flex;
   cursor: pointer;
@@ -26,5 +26,27 @@
   padding: 0;
   & img {
     @include img-size;
+  }
+}
+
+.hamburger_menu {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .socials {
+    display: none;
+  }
+
+  .hamburger_menu {
+    display: block;
+    @include img-size;
+    border-radius: 100%;
+
+    margin-top: 15px;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary_color;
+    }
   }
 }

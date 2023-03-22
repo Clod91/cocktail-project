@@ -1,0 +1,21 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.footer {
+  height: 50px;
+  background-color: $background-color;
+  margin-top: 40px;
+
+  .list {
+    list-style: none;
+    @include flex_container(row, center, space-around);
+    color: $secondary_color;
+    font-size: 1.3rem;
+    font-family: $primary_font;
+    padding: 0;
+    cursor: pointer;
+    li:hover {
+      color: $primary_color;
+    }
+  }
+}

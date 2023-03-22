@@ -1,19 +1,9 @@
 import styles from "./index.module.scss";
 
-const Navbar = ({ setMenuVisibility }) => {
-  const onHandleClick = () => setMenuVisibility((prev) => !prev);
-
+const Menu = ({ menuVisibility }) => {
   return (
-    <div className={styles.navbar}>
-      <ul className={styles.links}>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Reservations</li>
-      </ul>
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/920/920623.png"
-        alt="logo"
-      />
+    <div className={`${styles.menu} ${menuVisibility ? "" : styles.hide}`}>
+      <h2 className={styles.title}>Follow 753 Project!</h2>
       <ul className={styles.socials}>
         <li>
           <img
@@ -34,14 +24,8 @@ const Navbar = ({ setMenuVisibility }) => {
           />
         </li>
       </ul>
-      <img
-        className={styles.hamburger_menu}
-        onClick={onHandleClick}
-        src="https://img.icons8.com/ios-filled/256/xbox-menu.png"
-        alt="menu"
-      />
     </div>
   );
 };
 
-export default Navbar;
+export default Menu;

@@ -1,7 +1,7 @@
 import Card from "../card";
 import { useState, useEffect } from "react";
 import { GET } from "../../utils/http";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Content = ({ setItemInfo }) => {
   const [cocktailList, setCocktailList] = useState([]);
@@ -15,7 +15,7 @@ const Content = ({ setItemInfo }) => {
   }, []);
 
   return (
-    <div className="content">
+    <div className={styles.content}>
       {cocktailList.map((cocktail) => (
         <Card
           data={cocktail}
