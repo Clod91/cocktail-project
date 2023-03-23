@@ -1,14 +1,16 @@
 import styles from "./index.module.scss";
 
-const Navbar = ({ setMenuVisibility }) => {
-  const onHandleClick = () => setMenuVisibility((prev) => !prev);
+const Navbar = ({ setMenuVisibility, setReservationInfo }) => {
+  const onHandleMenuClick = () => setMenuVisibility((prev) => !prev);
+  const onHandleResClick = () =>
+    setReservationInfo((prev) => ({ ...prev, isVisible: true }));
 
   return (
     <div className={styles.navbar}>
       <ul className={styles.links}>
         <li>Home</li>
         <li>About Us</li>
-        <li>Reservations</li>
+        <li onClick={onHandleResClick}>Reservations</li>
       </ul>
       <img
         src="https://cdn-icons-png.flaticon.com/512/920/920623.png"
@@ -36,7 +38,7 @@ const Navbar = ({ setMenuVisibility }) => {
       </ul>
       <img
         className={styles.hamburger_menu}
-        onClick={onHandleClick}
+        onClick={onHandleMenuClick}
         src="https://img.icons8.com/ios-filled/256/xbox-menu.png"
         alt="menu"
       />
