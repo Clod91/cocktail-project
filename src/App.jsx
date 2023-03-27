@@ -8,8 +8,12 @@ import Footer from "./components/footer";
 import Menu from "./components/menu";
 import Reservation from "./components/reservation";
 import Popup from "./components/popup";
+import { filteredList } from "./utils/func";
 function App() {
   const [menuVisibility, setMenuVisibility] = useState(false);
+
+  const [category, setCategory] = useState("Cocktail");
+  const [cocktailList, setCocktailList] = useState([]);
   const [isPopupIsVisible, setPopupVisibility] = useState(false);
   const [reservationInfo, setReservationInfo] = useState({
     isVisible: false,
@@ -20,6 +24,7 @@ function App() {
   const [itemInfo, setItemInfo] = useState({
     isVisible: false,
     payload: {},
+    positionList: null,
   });
   return (
     <div className="App">
@@ -31,7 +36,11 @@ function App() {
       {isPopupIsVisible && <Popup reservation={reservationInfo} />}
       <Menu menuVisibility={menuVisibility} />
       {itemInfo.isVisible ? (
-        <ItemDescription data={itemInfo.payload} setItemInfo={setItemInfo} />
+        <ItemDescription
+          data={itemInfo}
+          setItemInfo={setItemInfo}
+          filteredList={filteredList(cocktailList, "strCategory", category)}
+        />
       ) : (
         <>
           {reservationInfo.isVisible && (
@@ -41,8 +50,13 @@ function App() {
             />
           )}
 
-          <Hero />
-          <Content setItemInfo={setItemInfo} />
+          <Hero setCategory={setCategory} />
+          <Content
+            setItemInfo={setItemInfo}
+            cocktailList={filteredList(cocktailList, "strCategory", category)}
+            setCocktailList={setCocktailList}
+            category={category}
+          />
         </>
       )}
       <Footer />

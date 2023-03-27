@@ -1,5 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+@import "../../styles/media";
 .navbar {
   display: flex;
   height: 60px;
@@ -33,7 +34,7 @@
   display: none;
 }
 
-@media screen and (max-width: 800px) {
+@include mobile {
   .socials {
     display: none;
   }

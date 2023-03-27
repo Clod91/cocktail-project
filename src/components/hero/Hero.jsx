@@ -1,14 +1,17 @@
 import styles from "./index.module.scss";
 
-const Hero = () => {
+const Hero = ({ setCategory }) => {
+  const onHandleClick = (value) => setCategory(value);
   return (
     <div className={styles.hero}>
-      <img
-        className={styles.image}
-        src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-        alt="image"
-      />
-      <h1 className={styles.title}>753 PROJECT</h1>
+      <div className={styles.image_container}>
+        <img
+          className={styles.image}
+          src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+          alt="image"
+        />
+        <h1 className={styles.title}>753 PROJECT</h1>
+      </div>
       <ul className={styles.first_list}>
         <li>
           <div>
@@ -40,12 +43,12 @@ const Hero = () => {
       </ul>
       <hr />
       <ul className={styles.second_list}>
-        <li>ordinary drinks</li>
-        <li>cocktails</li>
-        <li>shots</li>
-        <li>punch</li>
-        <li>coffees</li>
-        <li>others</li>
+        <li onClick={() => onHandleClick("Ordinary Drink")}>ordinary drinks</li>
+        <li onClick={() => onHandleClick("Cocktail")}>cocktails</li>
+        <li onClick={() => onHandleClick("Shot")}>shots</li>
+        <li onClick={() => onHandleClick("Punch / Party Drink")}>punch</li>
+        <li onClick={() => onHandleClick("Coffee / Tea")}>coffees</li>
+        <li onClick={() => onHandleClick("Other / Unknown")}>others</li>
       </ul>
     </div>
   );

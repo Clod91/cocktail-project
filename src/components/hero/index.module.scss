@@ -1,17 +1,27 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+@import "../../styles/media";
 .hero {
   @include flex_container(column);
   font-family: $primary_font;
 }
 
-.image {
-  @include img-size(500px, 100vw);
-  object-fit: cover;
+.image_container {
+  position: relative;
+
+  .image {
+    @include img-size(500px, 100vw);
+    object-fit: cover;
+  }
+  .title {
+    font-size: 4rem;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    text-shadow: 0 0 4px $secondary_color;
+  }
 }
-.title {
-  font-size: 3rem;
-}
+
 .first_list {
   display: flex;
   list-style: none;
@@ -40,10 +50,20 @@ hr {
   padding: 0;
   font-weight: bold;
   font-size: 1.3rem;
+
   li {
     cursor: pointer;
     &:hover {
       color: $primary_color;
+    }
+  }
+}
+
+@include mobile {
+  .image_container {
+    .title {
+      left: 20px;
+      font-size: 3.5rem;
     }
   }
 }
